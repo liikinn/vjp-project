@@ -1,5 +1,5 @@
-# VJP-project
-A project for Basics of Web Publishing in Aalto University.
+# vjp-project
+A project for Basics of Web Publishing course in Aalto University
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
