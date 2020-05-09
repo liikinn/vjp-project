@@ -1,5 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
+/* Importing the Bootstrap CSS */
+/* eslint-disable-next-line import/no-unassigned-import*/
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import { App } from "./components/app";
 import * as serviceWorker from "./service-worker";
