@@ -6,7 +6,7 @@ import {
   Switch,
 } from "react-router-dom";
 
-import { Header } from "./header-section";
+import Header from "./header-section";
 import { Main } from "./main-section";
 import { Home } from "./home-view";
 import { NewsFeed } from "./news-feed-view";
