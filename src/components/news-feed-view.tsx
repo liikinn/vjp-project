@@ -1,28 +1,58 @@
 import React from "react";
+import { Card, Col, Container, Row } from "react-bootstrap";
 
 const NewsFeed: React.FC = (props) => {
   return (
-    <div>
-      Ajankohtaista Linnanmäen sirkuskoulu on Suomen toiseksi vanhin
-      nuorisosirkus. Se on perustettu vuonna 1981. Kaksikymmentä vuotta
-      myöhemmin Lasten Päivän Säätiö luopui sirkuskoulun vetovastuusta.
-      Perustettiin Linnanmäen sirkuskoulun kannatusyhdistys ry, joka aloitti
-      virallisesti toimintansa syksyllä 2002 ja jatkoi täten sirkuskoulun
-      pyörittämistä. Linnanmäen sirkuskoulussa on ehtinyt vuosien saatossa olla
-      mukana monia nykyisin omilla aloillaan hyvinkin menestyneitä suomalaisia,
-      kuten Iiro Seppänen, Mika Häkkinen, Jaakko Saariluoma, Cia Canger ja Juha
-      Kurvinen. Linnanmäen sirkuskouluun ovat kaikki tervetulleita taitoihin,
-      taustoihin tai esimerkiksi varallisuuteen katsomatta. Tämän hetkistä
-      harrastustoimintaa rahoitetaan lukukausimaksuilla, esiintymisillä ja
-      avustuksilla. Yhdistys pyrkii kehittämään toimintaa tukevaa aktiivista
-      vanhempainrinkiä. Hallitus muodostuu sirkuskoulun oppilaiden vanhemmista.
-      Hallitukseen kuuluu neljä varsinaista jäsentä ja kaksi varajäsentä.
-      Hallitus nimeää kannatusyhdistyksen toiminnanjohtajan. Linnanmäen
-      sirkuskoulu kuuluu Suomen nuorisosirkusliittoon ja on vakiinnuttanut
-      paikkansa Suomen nuorisosirkustoiminnassa. Toimikautensa ajan se on
-      nostanut lajin suosiota pääkaupunkiseudulla.
+    <Container>
+      <Row>
+        <Col>
+          <h3>Ajankohtaista</h3>
+          <Card>
+            <Card.Body>
+              <Card.Title>Korona-tietoa</Card.Title>
+              <Card.Text>
+                Lähiopetustoiminta keskeytetty 13.3-13.5.2020. The activities of
+                circus training have been cancelled 13.3-13.5.2020.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          <Card>
+            <Card.Body>
+              <Card.Title>Uudet oppilaat</Card.Title>
+              <Card.Text>
+                Lomake Opetus-välilehdellä tai sähköposti
+                lintsinsirkus@gmail.com. Otamme yhteyttä! Jäsentakuu: vanhojen
+                sirkuskoululaisten paikka säilyy aina automaattisesti. Paikan
+                peruuttamiseksi riittää sähköposti osoitteeseen
+                lintsinsirkus@gmail.com ennen eräpäivää, jonka kuittaamme
+                saaduksi. Lasku tulee sähköisesti kahdessa osassa: jäsenmaksu
+                etukäteen, harrastusmaksu kahden kokeiluviikon jälkeen.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          <Card>
+            <Card.Body>
+              <Card.Title>
+                Linnanmäen sirkuskoulu voitti Apu-tonnin 2020
+              </Card.Title>
+              <Card.Text>
+                APU-Lehti myönsi sirkuskoululle Apu-tonnin 2020! Lue
+                artikkeli&nbsp;
+                <a
+                  href="https://www.apu.fi/artikkelit/apu-tonni-linnanmaen-sirkuskoululle-ohjataan-vahavaraisten-oppilaiden-harrastustoimintaan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  täältä
+                </a>
+                .
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
       {props.children}
-    </div>
+    </Container>
   );
 };
 
