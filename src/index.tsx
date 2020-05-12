@@ -1,16 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 /* Importing the Bootstrap CSS */
 /* eslint-disable-next-line import/no-unassigned-import */
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { App } from "./components/app";
 import * as serviceWorker from "./service-worker";
+import { configureStore } from "./redux/store";
+
+const store = configureStore({});
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById("root")
 );
 
