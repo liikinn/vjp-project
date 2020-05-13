@@ -1,5 +1,14 @@
 import React from "react";
-import { Button, Card, Col, Container, Modal, Row } from "react-bootstrap";
+import {
+  Alert,
+  Button,
+  Card,
+  Col,
+  Container,
+  Fade,
+  Modal,
+  Row,
+} from "react-bootstrap";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 
@@ -32,6 +41,9 @@ let lastId = 3;
 
 const NewsFeed: React.FC<Props> = (props) => {
   const [showModal, setShowModal] = React.useState<boolean>(false);
+  const [showItemDeletedAlert, setShowItemDeletedAlert] = React.useState<
+    boolean
+  >(false);
   const [initialValues, setInitialValues] = React.useState<NewsItemFormState>();
   const orderedNewsItems = props.newsItems.sort((newsItem1, newsItem2) =>
     compareDates(newsItem2.date, newsItem1.date)
@@ -91,6 +103,11 @@ const NewsFeed: React.FC<Props> = (props) => {
                         variant="outline-danger"
                         onClick={() => {
                           props.deleteNewsItem(newsItem);
+                          setShowItemDeletedAlert(true);
+                          setTimeout(
+                            () => setShowItemDeletedAlert(false),
+                            3500
+                          );
                         }}
                       >
                         Poista
@@ -140,6 +157,16 @@ const NewsFeed: React.FC<Props> = (props) => {
           />
         </Modal.Body>
       </Modal>
+      <Alert
+        className="item-deleted-alert"
+        style={{ position: "absolute", top: 0, width: "100%" }}
+        show={showItemDeletedAlert}
+        variant="success"
+        transition={Fade}
+        onClose={() => setShowItemDeletedAlert(false)}
+      >
+        Uutinen on poistettu.
+      </Alert>
     </>
   );
 };

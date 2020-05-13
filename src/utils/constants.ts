@@ -31,7 +31,7 @@ export const newsItems = [
     id: 3,
     title: "Uudet oppilaat",
     content:
-      "Lomake Opetus-välilehdellä tai sähköposti lintsinsirkus@gmail.com. Otamme yhteyttä! Jäsentakuu: vanhojen sirkuskoululaisten paikka säilyy aina automaattisesti. Paikan peruuttamiseksi riittää sähköposti osoitteeseen lintsinsirkus@gmail.com ennen eräpäivää, jonka kuittaamme saaduksi. Lasku tulee sähköisesti kahdessa osassa: jäsenmaksu etukäteen, harrastusmaksu kahden kokeiluviikon jälkeen.",
+      "Ilmoittautua voi täyttämällä Opetus-välilehdeltä löytyvän lomakkeen tai lähettämällä sähköpostia osoitteeseen lintsinsirkus@gmail.com. Otamme yhteyttä! Jäsentakuu: vanhojen sirkuskoululaisten paikka säilyy aina automaattisesti. Paikan peruuttamiseksi riittää sähköposti osoitteeseen lintsinsirkus@gmail.com ennen eräpäivää, jonka kuittaamme saaduksi. Lasku tulee sähköisesti kahdessa osassa: jäsenmaksu etukäteen, harrastusmaksu kahden kokeiluviikon jälkeen.",
     date: new Date("2020/01/01"),
   },
 ];
