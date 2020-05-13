@@ -37,8 +37,6 @@ const LoginForm: React.FC<LoginFormProps> = (props) => {
       }}
     >
       {(form) => {
-        // eslint-disable-next-line no-console
-        console.log(form);
         return (
           <Form
             className="pb-1"

@@ -1,13 +1,20 @@
-import { createStore, Store, applyMiddleware } from "redux";
+import { createStore, Store, applyMiddleware, combineReducers } from "redux";
 import logger from "redux-logger";
 import thunk from "redux-thunk";
 
-import { userReducer, User } from "./reducers/user";
+import { userReducer, UserState } from "./reducers/user";
+import { NewsItemListState, newsItemReducer } from "./reducers/news-item";
 
 export interface RootState {
-  user?: User;
+  user?: UserState;
+  newsItems: NewsItemListState;
 }
 
+const rootReducer = combineReducers({
+  user: userReducer,
+  newsItems: newsItemReducer,
+});
+
 export function configureStore(initialState: RootState): Store<RootState> {
-  return createStore(userReducer, initialState, applyMiddleware(thunk, logger));
+  return createStore(rootReducer, initialState, applyMiddleware(thunk, logger));
 }

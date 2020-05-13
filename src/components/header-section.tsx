@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, Navbar, Nav } from "react-bootstrap";
+import { Alert, Fade, Modal, Navbar, Nav } from "react-bootstrap";
 import { connect } from "react-redux";
 import { withRouter, RouteComponentProps } from "react-router";
 import { Dispatch } from "redux";
@@ -14,6 +14,8 @@ import { RootState } from "../redux/store";
 import { ADMIN_USER } from "../utils/constants";
 
 import { LoginForm } from "./login-form";
+/* eslint-disable-next-line import/no-unassigned-import */
+import "./header-component.css";
 
 interface MapStateToProps {
   user?: User;
@@ -27,7 +29,13 @@ interface MapDispatchToProps {
 type Props = MapDispatchToProps & MapStateToProps & RouteComponentProps;
 
 const Header: React.FC<Props> = (props) => {
-  const [showModal, setModalShow] = React.useState<boolean>(false);
+  // eslint-disable-next-line no-console
+  console.log(props);
+  const [showModal, setShowModal] = React.useState<boolean>(false);
+  const [
+    showLogoutSuccessfulAlert,
+    setShowLogoutSuccessfulAlert,
+  ] = React.useState<boolean>(false);
   return (
     <>
       <Navbar bg="dark" variant="dark">
@@ -54,20 +62,19 @@ const Header: React.FC<Props> = (props) => {
         <Nav className="justify-content-end">
           {props.user ? (
             <>
-              <Navbar.Text>
-                Kirjautuneena: <a>{ADMIN_USER.NAME}</a>
-              </Navbar.Text>
+              <Navbar.Text>Kirjautuneena: {ADMIN_USER.NAME}</Navbar.Text>
               <Nav.Link
                 onClick={() => {
                   props.clearStoredUser();
-                  props.history.push("/");
+                  setShowLogoutSuccessfulAlert(true);
+                  setTimeout(() => setShowLogoutSuccessfulAlert(false), 4000);
                 }}
               >
                 Kirjaudu ulos
               </Nav.Link>
             </>
           ) : (
-            <Nav.Link onClick={() => setModalShow(true)}>
+            <Nav.Link onClick={() => setShowModal(true)}>
               Kirjaudu sisään
             </Nav.Link>
           )}
@@ -75,7 +82,7 @@ const Header: React.FC<Props> = (props) => {
       </Navbar>
       <Modal
         show={showModal}
-        onHide={() => setModalShow(false)}
+        onHide={() => setShowModal(false)}
         size="lg"
         aria-labelledby="login-modal"
         centered
@@ -87,18 +94,27 @@ const Header: React.FC<Props> = (props) => {
           <LoginForm
             handleSuccess={() => {
               props.storeUser({ name: ADMIN_USER.NAME });
-              setModalShow(false);
+              setShowModal(false);
             }}
           />
         </Modal.Body>
       </Modal>
+      <Alert
+        className="logout-alert"
+        show={showLogoutSuccessfulAlert}
+        variant="success"
+        transition={Fade}
+        onClose={() => setShowLogoutSuccessfulAlert(false)}
+      >
+        Sinut on kirjattu ulos.
+      </Alert>
     </>
   );
 };
 
 function mapStateToProps(state: RootState): MapStateToProps {
   return {
-    user: state.user,
+    user: state.user && state.user.user,
   };
 }
 

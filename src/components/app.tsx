@@ -9,7 +9,7 @@ import {
 import Header from "./header-section";
 import { Main } from "./main-section";
 import { Home } from "./home-view";
-import { NewsFeed } from "./news-feed-view";
+import NewsFeed from "./news-feed-view";
 import { EducationInformation } from "./education-information-view";
 import { ContactInformation } from "./contact-information-view";
 

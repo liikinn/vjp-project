@@ -8,8 +8,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { App } from "./components/app";
 import * as serviceWorker from "./service-worker";
 import { configureStore } from "./redux/store";
+import { newsItems } from "./utils/constants";
 
-const store = configureStore({});
+const store = configureStore({ newsItems: newsItems });
 
 ReactDOM.render(
   <Provider store={store}>
