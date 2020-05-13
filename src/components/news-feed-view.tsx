@@ -38,17 +38,27 @@ const NewsFeed: React.FC<Props> = (props) => {
   );
   return (
     <>
-      <Container className="p-3 mt-2">
-        <Row>
-          <Col>
-            <div className="d-flex justify-content-between">
-              <h3>Ajankohtaista</h3>
-              {props.user && (
-                <Button onClick={() => setShowModal(true)}>
+      <Container className="p-3 my-2">
+        <Row className="pt-2">
+          <Col xs={12} sm={6}>
+            <h3>Ajankohtaista</h3>
+          </Col>
+          {props.user && (
+            <Col
+              xs={12}
+              sm={6}
+              className="my-2 my-sm-0 d-sm-flex justify-content-sm-end"
+            >
+              <div>
+                <Button className="w-100" onClick={() => setShowModal(true)}>
                   Lisää uutinen
                 </Button>
-              )}
-            </div>
+              </div>
+            </Col>
+          )}
+        </Row>
+        <Row className="pb-2">
+          <Col>
             {orderedNewsItems.map((newsItem) => {
               return (
                 <Card className="my-3" key={newsItem.id}>

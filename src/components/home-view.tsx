@@ -5,13 +5,8 @@ import { VideoPlayer } from "./video-player-component";
 
 const Home: React.FC = () => {
   return (
-    <Container>
-      <Row>
-        <Col>
-          <VideoPlayer />
-        </Col>
-      </Row>
-      <Row>
+    <Container className="p-3 my-2">
+      <Row className="py-2">
         <Col>
           <h3>Linnanmäen sirkuskoulu</h3>
           <div>
@@ -25,6 +20,7 @@ const Home: React.FC = () => {
             suomalaisia, kuten Iiro Seppänen, Mika Häkkinen, Jaakko Saariluoma,
             Cia Canger ja Juha Kurvinen.
           </div>
+          <br />
           <div>
             Linnanmäen sirkuskouluun ovat kaikki tervetulleita taitoihin,
             taustoihin tai esimerkiksi varallisuuteen katsomatta. Tämän hetkistä
@@ -32,17 +28,24 @@ const Home: React.FC = () => {
             avustuksilla. Yhdistys pyrkii kehittämään toimintaa tukevaa
             aktiivista vanhempainrinkiä.
           </div>
+          <br />
           <div>
             Hallitus muodostuu sirkuskoulun oppilaiden vanhemmista. Hallitukseen
             kuuluu neljä varsinaista jäsentä ja kaksi varajäsentä. Hallitus
             nimeää kannatusyhdistyksen toiminnanjohtajan.
           </div>
+          <br />
           <div>
             Linnanmäen sirkuskoulu kuuluu Suomen nuorisosirkusliittoon ja on
             vakiinnuttanut paikkansa Suomen nuorisosirkustoiminnassa.
             Toimikautensa ajan se on nostanut lajin suosiota
             pääkaupunkiseudulla.
           </div>
+        </Col>
+      </Row>
+      <Row className="py-3">
+        <Col>
+          <VideoPlayer />
         </Col>
       </Row>
     </Container>
