@@ -38,7 +38,7 @@ const Header: React.FC<Props> = (props) => {
   ] = React.useState<boolean>(false);
   return (
     <>
-      <Navbar collapseOnSelect bg="dark" variant="dark" expand="md">
+      <Navbar fixed="top" collapseOnSelect bg="dark" variant="dark" expand="md">
         <Navbar.Brand className="mr-0 mr-md-2 pl-2">
           Linnanmäen sirkuskoulu
         </Navbar.Brand>
