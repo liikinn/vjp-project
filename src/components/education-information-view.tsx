@@ -4,7 +4,7 @@ import { Button, Col, Container, Jumbotron, Row, Table } from "react-bootstrap";
 const EducationInformation: React.FC = () => {
   return (
     <>
-      <Jumbotron>
+      <Jumbotron className="mb-1 px-sm-4 py-sm-5">
         <Container>
           <h3>Opetus Linnanmäen sirkuskoulussa</h3>
           <div className="my-3">
