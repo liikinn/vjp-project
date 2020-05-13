@@ -29,7 +29,10 @@ export function storeNewsItem(newsItem: NewsItem): NewsItemActionTypes {
 }
 
 export function deleteNewsItem(newsItem: NewsItem): NewsItemActionTypes {
-  return { type: ACTION_TYPES.DELETE_NEWS_ITEM, payload: newsItem };
+  return {
+    type: ACTION_TYPES.DELETE_NEWS_ITEM,
+    payload: newsItem,
+  };
 }
 
 export function updateNewsItem(newsItem: NewsItem): NewsItemActionTypes {

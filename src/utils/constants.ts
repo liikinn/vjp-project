@@ -1,3 +1,4 @@
+/* Redux actions types */
 export const ACTION_TYPES = {
   STORE_USER: "STORE_USER",
   CLEAR_STORED_USER: "CLEAR_STORED_USER",
@@ -12,6 +13,7 @@ export const ADMIN_USER = {
   PASSWORD: "admin",
 };
 
+/* Hardcoded news items to be shown in the news feed page */
 export const newsItems = [
   {
     id: 1,

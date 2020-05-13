@@ -36,6 +36,7 @@ interface MapDispatchToProps {
 
 type Props = MapStateToProps & MapDispatchToProps;
 
+/* This is used to keep track of the news item ids since they are not created by the backend */
 let lastId = 3;
 
 const NewsFeed: React.FC<Props> = (props) => {
@@ -133,6 +134,7 @@ const NewsFeed: React.FC<Props> = (props) => {
           <NewsItemForm
             initialValues={initialValues}
             handleSubmit={(values: NewsItemFormState, existingId?: number) => {
+              /* If the news item has an existing id, use that because the user is editing a news item */
               if (existingId) {
                 props.updateNewsItem({
                   ...values,
@@ -140,6 +142,7 @@ const NewsFeed: React.FC<Props> = (props) => {
                   id: existingId,
                 });
               } else {
+                /* The user is creating a new news item so increase the last id value and set that to the id */
                 props.storeNewsItem({
                   ...values,
                   date: new Date(),

@@ -13,8 +13,6 @@ import NewsFeed from "./views/news-feed-view";
 import { EducationInformation } from "./views/education-information-view";
 import { ContactInformation } from "./views/contact-information-view";
 
-//import logo from "../logo.svg";
-
 const App: React.FC = () => {
   return (
     <Router>

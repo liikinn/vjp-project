@@ -19,6 +19,7 @@ export const userReducer = (
     case ACTION_TYPES.STORE_USER:
       return {
         ...state,
+        /* TSLint complained here that ClearStoredUser does not contain payload */
         //eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         //@ts-ignore
         user: action.payload,

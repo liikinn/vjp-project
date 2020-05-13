@@ -81,6 +81,7 @@ const Header: React.FC<Props> = (props) => {
                 <Nav.Link
                   eventKey="5"
                   onClick={() => {
+                    /* Log out user */
                     props.clearStoredUser();
                     setShowLogoutSuccessfulAlert(true);
                     setTimeout(() => setShowLogoutSuccessfulAlert(false), 3500);
