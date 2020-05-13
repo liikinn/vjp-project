@@ -5,7 +5,7 @@ import { VideoPlayer } from "./video-player-component";
 
 const Home: React.FC = () => {
   return (
-    <Container className="p-3 my-2">
+    <Container className="p-3 my-sm-2">
       <Row className="py-2">
         <Col>
           <h3>Linnanmäen sirkuskoulu</h3>

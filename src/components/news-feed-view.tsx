@@ -38,7 +38,7 @@ const NewsFeed: React.FC<Props> = (props) => {
   );
   return (
     <>
-      <Container className="p-3 my-2">
+      <Container className="p-3 my-sm-2">
         <Row className="pt-2">
           <Col xs={12} sm={6}>
             <h3>Ajankohtaista</h3>

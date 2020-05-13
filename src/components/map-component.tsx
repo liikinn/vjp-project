@@ -13,7 +13,12 @@ const LeafletMap: React.FC = () => {
         attribution="&copy; <a href='http://osm.org/copyright'>OpenStreetMap</a> contributors"
       />
       <Marker position={position}>
-        <Popup>Linnanmäen sirkuskoulu</Popup>
+        <Popup>
+          <div>
+            <b>Linnanmäen sirkuskoulu</b>
+          </div>
+          <div>Paraistentie 3, Helsinki (Ruskeasuo)</div>
+        </Popup>
       </Marker>
     </Map>
   );
