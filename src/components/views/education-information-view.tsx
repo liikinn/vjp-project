@@ -221,7 +221,7 @@ const EducationInformation: React.FC = () => {
                   <td>190 €</td>
                 </tr>
                 <tr>
-                  <td>PELKKÄ tanssi (10krt)/jonkka/hyppis/pyörä</td>
+                  <td>PELKKÄ tanssi (10 krt)/jonkka/hyppis/pyörä</td>
                   <td>40 €</td>
                   <td>95 €</td>
                   <td>135 €</td>
