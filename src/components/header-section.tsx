@@ -29,8 +29,6 @@ interface MapDispatchToProps {
 type Props = MapDispatchToProps & MapStateToProps & RouteComponentProps;
 
 const Header: React.FC<Props> = (props) => {
-  // eslint-disable-next-line no-console
-  console.log(props);
   const [showModal, setShowModal] = React.useState<boolean>(false);
   const [
     showLogoutSuccessfulAlert,
@@ -81,17 +79,18 @@ const Header: React.FC<Props> = (props) => {
                   </Navbar.Text>
                 </div>
                 <Nav.Link
+                  eventKey="5"
                   onClick={() => {
                     props.clearStoredUser();
                     setShowLogoutSuccessfulAlert(true);
-                    setTimeout(() => setShowLogoutSuccessfulAlert(false), 4000);
+                    setTimeout(() => setShowLogoutSuccessfulAlert(false), 3500);
                   }}
                 >
                   Kirjaudu ulos
                 </Nav.Link>
               </>
             ) : (
-              <Nav.Link onClick={() => setShowModal(true)}>
+              <Nav.Link eventKey="5" onClick={() => setShowModal(true)}>
                 Kirjaudu sisään
               </Nav.Link>
             )}
@@ -119,6 +118,7 @@ const Header: React.FC<Props> = (props) => {
       </Modal>
       <Alert
         className="logout-alert"
+        style={{ position: "absolute", top: 56 }}
         show={showLogoutSuccessfulAlert}
         variant="success"
         transition={Fade}
