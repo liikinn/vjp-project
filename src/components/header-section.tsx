@@ -38,47 +38,65 @@ const Header: React.FC<Props> = (props) => {
   ] = React.useState<boolean>(false);
   return (
     <>
-      <Navbar bg="dark" variant="dark">
-        <Navbar.Brand>
-          <Nav.Link
-            className="navbar-brand"
-            onClick={() => props.history.push("/")}
-          >
-            Linnanmäen sirkuskoulu
-          </Nav.Link>
+      <Navbar collapseOnSelect bg="dark" variant="dark" expand="md">
+        <Navbar.Brand className="mr-0 mr-md-2 pl-2">
+          Linnanmäen sirkuskoulu
         </Navbar.Brand>
-        <Nav className="mr-auto">
-          <Nav.Link onClick={() => props.history.push("/")}>Etusivu</Nav.Link>
-          <Nav.Link onClick={() => props.history.push("/ajankohtaista")}>
-            Ajankohtaista
-          </Nav.Link>
-          <Nav.Link onClick={() => props.history.push("/opetus")}>
-            Opetus
-          </Nav.Link>
-          <Nav.Link onClick={() => props.history.push("/yhteystiedot")}>
-            Yhteystiedot
-          </Nav.Link>
-        </Nav>
-        <Nav className="justify-content-end">
-          {props.user ? (
-            <>
-              <Navbar.Text>Kirjautuneena: {ADMIN_USER.NAME}</Navbar.Text>
-              <Nav.Link
-                onClick={() => {
-                  props.clearStoredUser();
-                  setShowLogoutSuccessfulAlert(true);
-                  setTimeout(() => setShowLogoutSuccessfulAlert(false), 4000);
-                }}
-              >
-                Kirjaudu ulos
-              </Nav.Link>
-            </>
-          ) : (
-            <Nav.Link onClick={() => setShowModal(true)}>
-              Kirjaudu sisään
+        <Navbar.Toggle
+          className="px-2 py-1"
+          style={{ fontSize: "1em" }}
+          aria-controls="responsive-navbar-nav"
+        />
+        <Navbar.Collapse id="responsive-navbar-nav" className="pl-2 pl-md-0">
+          <Nav className="mr-auto">
+            <Nav.Link eventKey="1" onClick={() => props.history.push("/")}>
+              Etusivu
             </Nav.Link>
-          )}
-        </Nav>
+            <Nav.Link
+              eventKey="2"
+              onClick={() => props.history.push("/ajankohtaista")}
+            >
+              Ajankohtaista
+            </Nav.Link>
+            <Nav.Link
+              eventKey="3"
+              onClick={() => props.history.push("/opetus")}
+            >
+              Opetus
+            </Nav.Link>
+            <Nav.Link
+              eventKey="4"
+              onClick={() => props.history.push("/yhteystiedot")}
+            >
+              Yhteystiedot
+            </Nav.Link>
+          </Nav>
+          <Nav className="justify-content-end">
+            {props.user ? (
+              <>
+                <div>
+                  <Navbar.Text>Kirjautuneena:&nbsp;</Navbar.Text>
+                  <Navbar.Text className="text-white">
+                    {ADMIN_USER.NAME}
+                  </Navbar.Text>
+                </div>
+                <Nav.Link
+                  onClick={() => {
+                    props.clearStoredUser();
+                    setShowLogoutSuccessfulAlert(true);
+                    setTimeout(() => setShowLogoutSuccessfulAlert(false), 4000);
+                  }}
+                >
+                  Kirjaudu ulos
+                </Nav.Link>
+              </>
+            ) : (
+              <Nav.Link onClick={() => setShowModal(true)}>
+                Kirjaudu sisään
+              </Nav.Link>
+            )}
+          </Nav>
+        </Navbar.Collapse>
       </Navbar>
       <Modal
         show={showModal}
