@@ -3,7 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import { Formik } from "formik";
 import * as yup from "yup";
 
-import { authenticate } from "../utils/fake-auth";
+import { authenticate } from "../../utils/fake-auth";
 
 interface LoginFormProps {
   handleSuccess: () => void;

@@ -16,13 +16,12 @@ import {
   deleteNewsItem,
   storeNewsItem,
   updateNewsItem,
-} from "../redux/actions/news-item";
-import { NewsItem } from "../redux/reducers/news-item";
-import { User } from "../redux/reducers/user";
-import { RootState } from "../redux/store";
-import { compareDates } from "../utils/utils";
-
-import { NewsItemForm, NewsItemFormState } from "./news-item-form";
+} from "../../redux/actions/news-item";
+import { NewsItem } from "../../redux/reducers/news-item";
+import { User } from "../../redux/reducers/user";
+import { RootState } from "../../redux/store";
+import { compareDates } from "../../utils/utils";
+import { NewsItemForm, NewsItemFormState } from "../forms/news-item-form";
 
 interface MapStateToProps {
   user?: User;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
-import { VideoPlayer } from "./video-player-component";
+import { VideoPlayer } from "../video-player-component";
 
 const Home: React.FC = () => {
   return (

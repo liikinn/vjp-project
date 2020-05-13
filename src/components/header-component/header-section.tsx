@@ -4,16 +4,16 @@ import { connect } from "react-redux";
 import { withRouter, RouteComponentProps } from "react-router";
 import { Dispatch } from "redux";
 
-import { User } from "../redux/reducers/user";
+import { User } from "../../redux/reducers/user";
 import {
   clearStoredUser,
   storeUser,
   UserActionTypes,
-} from "../redux/actions/user";
-import { RootState } from "../redux/store";
-import { ADMIN_USER } from "../utils/constants";
+} from "../../redux/actions/user";
+import { RootState } from "../../redux/store";
+import { ADMIN_USER } from "../../utils/constants";
+import { LoginForm } from "../forms/login-form";
 
-import { LoginForm } from "./login-form";
 /* eslint-disable-next-line import/no-unassigned-import */
 import "./header-component.css";
 

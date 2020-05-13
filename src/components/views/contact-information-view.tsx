@@ -7,7 +7,7 @@ import {
   FaSpotify,
 } from "react-icons/fa";
 
-import LeafletMap from "./map-component";
+import LeafletMap from "../map-component/map-component";
 
 const ContactInformation: React.FC = () => {
   return (

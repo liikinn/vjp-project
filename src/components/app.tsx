@@ -6,12 +6,12 @@ import {
   Switch,
 } from "react-router-dom";
 
-import Header from "./header-section";
+import Header from "./header-component/header-section";
 import { Main } from "./main-section";
-import { Home } from "./home-view";
-import NewsFeed from "./news-feed-view";
-import { EducationInformation } from "./education-information-view";
-import { ContactInformation } from "./contact-information-view";
+import { Home } from "./views/home-view";
+import NewsFeed from "./views/news-feed-view";
+import { EducationInformation } from "./views/education-information-view";
+import { ContactInformation } from "./views/contact-information-view";
 
 //import logo from "../logo.svg";
 
